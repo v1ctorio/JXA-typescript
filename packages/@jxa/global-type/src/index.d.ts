@@ -1,13 +1,13 @@
 import type {
-    Application,
-    ObjectSpecifier,
-    Automation
+    Application as JxaApplication,
+    ObjectSpecifier as JxaObjectSpecifier,
+    Automation as JxaAutomation
 } from "@v1ctorio/jxa-types";
 
 declare global {
-    const Application: typeof Application;
-    const Automation: typeof Automation;
-    const ObjectSpecifier: typeof ObjectSpecifier;
+    const Application: typeof JxaApplication;
+    const Automation: typeof JxaAutomation;
+    const ObjectSpecifier: typeof JxaObjectSpecifier;
 
     function Path(name: string): object;
 

@@ -10,6 +10,13 @@ export namespace StandardAdditions {
   */
 
  /**
+  * A JXA Path object. Use toString() to get the POSIX path.
+  */
+ export interface Path {
+   toString(): string;
+ }
+
+ /**
   * A file object specified with a POSIX (slash)-style pathname.
   */
  export interface POSIXFile {
@@ -131,11 +138,11 @@ export namespace StandardAdditions {
    /**
     * name of button chosen (empty if ‘giving up after’ was supplied and alert timed out)
     */
-   buttonReturned(): string;
+   buttonReturned: string;
    /**
     * Did the alert time out? (present only if ‘giving up after’ was supplied)
     */
-   gaveUp(): boolean;
+   gaveUp?: boolean;
  }
 
  /**
@@ -151,15 +158,15 @@ export namespace StandardAdditions {
    /**
     * name of button chosen (empty if ‘giving up after’ was supplied and dialog timed out)
     */
-   buttonReturned(): string;
+   buttonReturned: string;
    /**
     * text entered (present only if ‘default answer’ was supplied)
     */
-   textReturned(): string;
+   textReturned?: string;
    /**
     * Did the dialog time out? (present only if ‘giving up after’ was supplied)
     */
-   gaveUp(): boolean;
+   gaveUp?: boolean;
  }
 
  /**
@@ -175,95 +182,95 @@ export namespace StandardAdditions {
    /**
     * the name of the item
     */
-   name(): string;
+   name: string;
    /**
     * the user-visible name of the item
     */
-   displayedName(): string;
+   displayedName: string;
    /**
     * the short name (CFBundleName) of the item (if the item is an application)
     */
-   shortName(): string;
+   shortName?: string | null;
    /**
     * the name extension of the item (such as “txt”)
     */
-   nameExtension(): string;
+   nameExtension: string | null;
    /**
     * the item’s bundle identifier (if the item is a package)
     */
-   bundleIdentifier(): string;
+   bundleIdentifier?: string | null;
    /**
     * the item’s type identifier
     */
-   typeIdentifier(): string;
+   typeIdentifier?: string | null;
    /**
     * the kind of the item
     */
-   kind(): string;
+   kind: string;
    /**
     * the application that normally opens this kind of item
     */
-   defaultApplication(): any;
+   defaultApplication: Path | null;
    /**
     * the date the item was created
     */
-   creationDate(): any;
+   creationDate: Date;
    /**
     * the date the item was last modified
     */
-   modificationDate(): any;
+   modificationDate: Date;
    /**
     * the file type of the item
     */
-   fileType(): string;
+   fileType: string | null;
    /**
     * the creator type of the item
     */
-   fileCreator(): string;
+   fileCreator: string | null;
    /**
     * the item’s short version string (from the Finder’s ‘Get Info’ box)
     */
-   shortVersion(): string;
+   shortVersion?: string | null;
    /**
     * the item’s long version string (from the Finder’s ‘Get Info’ box)
     */
-   longVersion(): string;
+   longVersion?: string | null;
    /**
     * the size of the item in bytes
     */
-   size(): number;
+   size: number;
    /**
     * Is the item an alias file?
     */
-   alias(): boolean;
+   alias: boolean;
    /**
     * Is the item a folder?
     */
-   folder(): boolean;
+   folder: boolean;
    /**
     * Is the item a package (a folder treated as a file?)
     */
-   packageFolder(): boolean;
+   packageFolder: boolean;
    /**
     * Is the item’s name extension hidden from the user?
     */
-   extensionHidden(): boolean;
+   extensionHidden: boolean;
    /**
     * Is the item visible?
     */
-   visible(): boolean;
+   visible: boolean;
    /**
     * Is the item locked?
     */
-   locked(): boolean;
+   locked?: boolean;
    /**
     * Is the item currently in use?
     */
-   busyStatus(): boolean;
+   busyStatus?: boolean;
    /**
     * the coordinates of the folder’s window (if the item is a folder)
     */
-   folderWindow(): any;
+   folderWindow?: { x: number; y: number; width: number; height: number };
  }
 
  /**
@@ -279,19 +286,19 @@ export namespace StandardAdditions {
    /**
     * the sound output volume
     */
-   outputVolume(): number;
+   outputVolume: number;
    /**
     * the sound input volume
     */
-   inputVolume(): number;
+   inputVolume: number;
    /**
     * the alert volume (as a percentage of the output volume)
     */
-   alertVolume(): number;
+   alertVolume: number;
    /**
     * Is the sound output muted?
     */
-   outputMuted(): boolean;
+   outputMuted: boolean;
  }
 
  /**
@@ -307,67 +314,67 @@ export namespace StandardAdditions {
    /**
     * the AppleScript version
     */
-   appleScriptVersion(): string;
+   applescriptVersion: string | null;
    /**
     * the AppleScript Studio version
     */
-   appleScriptStudioVersion(): string;
+   applescriptStudioVersion: string | null;
    /**
     * the system version
     */
-   systemVersion(): string;
+   systemVersion: string;
    /**
     * the current user’s short name
     */
-   shortUserName(): string;
+   shortUserName: string;
    /**
     * the current user’s long name
     */
-   longUserName(): string;
+   longUserName: string;
    /**
     * the current user’s ID
     */
-   userID(): number;
+   userID: number;
    /**
     * the current user’s locale
     */
-   userLocale(): string;
+   userLocale: string;
    /**
     * the current user’s home directory
     */
-   homeDirectory(): any;
+   homeDirectory: Path;
    /**
     * the boot volume
     */
-   bootVolume(): string;
+   bootVolume: string;
    /**
     * the computer name
     */
-   computerName(): string;
+   computerName: string;
    /**
     * the host name
     */
-   hostName(): string;
+   hostName: string;
    /**
     * the IPv4 address
     */
-   IPv4Address(): string;
+   ipv4Address: string | null;
    /**
     * the primary Ethernet address
     */
-   primaryEthernetAddress(): string;
+   primaryEthernetAddress: string | null;
    /**
     * the CPU type
     */
-   CPUType(): string;
+   cpuType: string;
    /**
     * the clock speed of the CPU in MHz
     */
-   CPUSpeed(): number;
+   cpuSpeed: number | null;
    /**
     * the amount of physical RAM in MB
     */
-   physicalMemory(): number;
+   physicalMemory: number;
  }
 
     // Function options
@@ -1287,7 +1294,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the chosen color
       */
-     chooseColor(option?: StandardAdditions.ChooseColorOptionalParameter): any;
+     chooseColor(option?: StandardAdditions.ChooseColorOptionalParameter): number[];
 
      /**
       * Choose a file on a disk or server
@@ -1295,7 +1302,9 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the chosen file
       */
-     chooseFile(option?: StandardAdditions.ChooseFileOptionalParameter): any;
+     chooseFile(option: StandardAdditions.ChooseFileOptionalParameter & { multipleSelectionsAllowed: true }): StandardAdditions.Path[];
+     chooseFile(option?: StandardAdditions.ChooseFileOptionalParameter & { multipleSelectionsAllowed?: false }): StandardAdditions.Path;
+     chooseFile(option: StandardAdditions.ChooseFileOptionalParameter): StandardAdditions.Path | StandardAdditions.Path[];
 
      /**
       * Get a new file reference from the user, without creating the file
@@ -1303,7 +1312,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the file the user specified
       */
-     chooseFileName(option?: StandardAdditions.ChooseFileNameOptionalParameter): any;
+     chooseFileName(option?: StandardAdditions.ChooseFileNameOptionalParameter): StandardAdditions.Path;
 
      /**
       * Choose a folder on a disk or server
@@ -1311,15 +1320,17 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the chosen folder
       */
-     chooseFolder(option?: StandardAdditions.ChooseFolderOptionalParameter): any;
+     chooseFolder(option: StandardAdditions.ChooseFolderOptionalParameter & { multipleSelectionsAllowed: true }): StandardAdditions.Path[];
+     chooseFolder(option?: StandardAdditions.ChooseFolderOptionalParameter & { multipleSelectionsAllowed?: false }): StandardAdditions.Path;
+     chooseFolder(option: StandardAdditions.ChooseFolderOptionalParameter): StandardAdditions.Path | StandardAdditions.Path[];
 
      /**
       * Choose one or more items from a list
       * @param directParameter a list of items to display
       * @param option
-      * @return the list of selected items
+      * @return the list of selected items, or false if the user cancelled
       */
-     chooseFromList(directParameter: {}, option?: StandardAdditions.ChooseFromListOptionalParameter): void;
+     chooseFromList<T extends string | number>(directParameter: T[], option?: StandardAdditions.ChooseFromListOptionalParameter): T[] | false;
 
      /**
       * Choose a running application on a remote machine or on this machine
@@ -1389,7 +1400,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
 
       * @return a list of the currently mounted volumes.
       */
-     listDisks(): void;
+     listDisks(): string[];
 
      /**
       * Return the contents of a specified folder
@@ -1397,7 +1408,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return a list of the items in the specified folder
       */
-     listFolder(directParameter: any, option?: StandardAdditions.ListFolderOptionalParameter): void;
+     listFolder(directParameter: any, option?: StandardAdditions.ListFolderOptionalParameter): string[];
 
      /**
       * Mount the specified server volume
@@ -1413,7 +1424,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the path to the specified item
       */
-     pathTo(directParameter: {}, option?: StandardAdditions.PathToOptionalParameter): void;
+     pathTo(directParameter: any, option: Pick<StandardAdditions.PathToOptionalParameter1, "from" | "folderCreation"> & { as: "string" }): string;
 
      /**
       * Return the full path to the specified folder
@@ -1421,7 +1432,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the path to the specified folder
       */
-     pathTo(directParameter: any, option?: StandardAdditions.PathToOptionalParameter1): any;
+     pathTo(directParameter: any, option?: StandardAdditions.PathToOptionalParameter1): StandardAdditions.Path;
 
      /**
       * Return the full path to the specified resource
@@ -1429,7 +1440,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the path to the resource
       */
-     pathToResource(directParameter: string, option?: StandardAdditions.PathToResourceOptionalParameter): any;
+     pathToResource(directParameter: string, option?: StandardAdditions.PathToResourceOptionalParameter): StandardAdditions.Path;
 
      /**
       * Convert a number to a character
@@ -1490,7 +1501,7 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return a list of {data type, size} for each type of data on the clipboard
       */
-     clipboardInfo(option?: StandardAdditions.ClipboardInfoOptionalParameter): void;
+     clipboardInfo(option?: StandardAdditions.ClipboardInfoOptionalParameter): [any, number][];
 
      /**
       * Open a disk file for the read and write commands
@@ -1566,14 +1577,14 @@ export interface StandardAdditions extends StandardAdditions.Application {
 
       * @return a list of installed scripting components
       */
-     scriptingComponents(): void;
+     scriptingComponents(): string[];
 
      /**
       * Return the current date and time
 
       * @return the current date and time. Use ‘month of (current date)’, etc. to get individual parts.
       */
-     currentDate(): any;
+     currentDate(): Date;
 
      /**
       * Execute a shell script using the ‘sh’ shell
@@ -1620,7 +1631,9 @@ export interface StandardAdditions extends StandardAdditions.Application {
       * @param option
       * @return the result of the query (or a list of all environment variables, if no attribute is provided)
       */
-     systemAttribute(directParameter?: any, option?: StandardAdditions.SystemAttributeOptionalParameter): any;
+     systemAttribute(): string[];
+     systemAttribute(directParameter: string, option: StandardAdditions.SystemAttributeOptionalParameter & { has: number }): boolean;
+     systemAttribute(directParameter: string, option?: StandardAdditions.SystemAttributeOptionalParameter): string | number;
 
      /**
       * Get information about the system

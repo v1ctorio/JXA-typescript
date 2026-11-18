@@ -1,6 +1,6 @@
 {
   "name": "@jxa/repl",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "REPL for JXA.",
   "keywords": [
     "cli",
@@ -46,7 +46,7 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@jxa/run": "^1.4.0"
+    "@jxa/run": "^1.4.1"
   },
   "devDependencies": {
     "@types/mocha": "^9.1.1",

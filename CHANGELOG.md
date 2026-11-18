@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/v1ctorio/JXA-typescript/compare/v1.4.0...v1.4.1) (2026-11-18)
+
+
+### Bug Fixes
+
+* **jxa/types:** update missing or incorrect types in Standard additions ([2da290d](https://github.com/v1ctorio/JXA-typescript/commit/2da290d06dfd6e0a370ffd61d6f05d0988bc94af))
+
+
+
+
+
 # [1.4.0](https://github.com/JXA-userland/JXA/compare/v1.3.6...v1.4.0) (2025-04-06)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/JXA-userland/JXA/compare/v1.4.0...v1.4.1) (2026-11-18)
+
+**Note:** Version bump only for package example
+
+
+
+
+
 # [1.4.0](https://github.com/JXA-userland/JXA/compare/v1.3.6...v1.4.0) (2025-04-06)
 
 **Note:** Version bump only for package example

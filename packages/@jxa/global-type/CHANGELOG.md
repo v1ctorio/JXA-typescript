@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/v1ctorio/JXA-typescript/compare/v1.4.1...v1.4.2) (2026-11-18)
+
+
+### Bug Fixes
+
+* **global-type:** stop globals resolving to any ([3df98a2](https://github.com/v1ctorio/JXA-typescript/commit/3df98a2ef858816744dbaeb5baa13ee8c9c621e4))
+
+
+
+
+
 ## [1.4.1](https://github.com/JXA-userland/JXA/compare/v1.4.0...v1.4.1) (2026-11-18)
 
 **Note:** Version bump only for package @jxa/global-type

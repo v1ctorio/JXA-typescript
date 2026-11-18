@@ -1,6 +1,6 @@
 {
   "name": "@v1ctorio/jxa-global-type",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "JXA typing for global",
   "keywords": [
     "JXA",
@@ -39,7 +39,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@v1ctorio/jxa-types": "^1.4.1"
+    "@v1ctorio/jxa-types": "^1.4.2"
   },
   "devDependencies": {
     "@types/node": "^18.7.8",

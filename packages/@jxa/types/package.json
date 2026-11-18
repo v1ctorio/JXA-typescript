@@ -1,5 +1,5 @@
 {
-  "name": "@jxa/types",
+  "name": "@v1ctorio/jxa-types",
   "version": "1.4.1",
   "description": "TypeScript definition for JXA core.",
   "keywords": [
@@ -9,9 +9,9 @@
     "ts",
     "types"
   ],
-  "homepage": "https://github.com/JXA-userland/JXA/tree/master/packages/@jxa/types/",
+  "homepage": "https://github.com/v1ctorio/JXA-typescript/tree/master/packages/@jxa/types/",
   "bugs": {
-    "url": "https://github.com/JXA-userland/JXA/issues"
+    "url": "https://github.com/v1ctorio/JXA-typescript/issues"
   },
   "license": "MIT",
   "author": "azu",
@@ -28,9 +28,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JXA-userland/JXA.git"
+    "url": "https://github.com/v1ctorio/JXA-typescript.git",
+    "directory": "packages/@jxa/types"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "scripts": {

@@ -2,7 +2,7 @@ import type {
     Application,
     ObjectSpecifier,
     Automation
-} from "@jxa/types";
+} from "@v1ctorio/jxa-types";
 
 declare global {
     const Application: typeof Application;

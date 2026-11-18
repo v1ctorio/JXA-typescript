@@ -1,4 +1,4 @@
-# @jxa/global-type
+# @v1ctorio/jxa-global-type
 
 JXA typing for global.
 
@@ -12,19 +12,19 @@ This typing enable auto-complete in your editor.
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @jxa/global-type
+    npm install @v1ctorio/jxa-global-type
 
 ## Usage
 
-Install and includes `@jxa/global-type` as typing.
+Install and includes `@v1ctorio/jxa-global-type` as typing.
 Then, automatically inject `Application` to `global`
 
-### via `import("@jxa/global-type")`
+### via `import("@v1ctorio/jxa-global-type")`
 
-You can add JSX types to `global` by import `@jxa/global-type`:
+You can add JSX types to `global` by import `@v1ctorio/jxa-global-type`:
 
 ```ts
-import "@jxa/global-type";
+import "@v1ctorio/jxa-global-type";
 
 // your JXA application
 var userName = Application("System Events").currentUser().name();
@@ -37,7 +37,7 @@ var userName = Application("System Events").currentUser().name();
 ### Via reference comment
 
 ```ts
-/// <reference path="./node_modules/@jxa/global-type/src/index.d.ts" />
+/// <reference path="./node_modules/@v1ctorio/jxa-global-type/src/index.d.ts" />
 
 // your JXA application
 var userName = Application("System Events").currentUser().name();

@@ -5,7 +5,7 @@ A example code for `@jxa` packages.
 ## Usage
 
 ```ts
-import "@jxa/global-type";
+import "@v1ctorio/jxa-global-type";
 import { run } from "@jxa/run";
 
 /**

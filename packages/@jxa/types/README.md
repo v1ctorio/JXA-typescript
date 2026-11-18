@@ -1,4 +1,4 @@
-# @jxa/types
+# @v1ctorio/jxa-types
 
 TypeScript definition for JXA core.
 
@@ -6,14 +6,14 @@ TypeScript definition for JXA core.
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @jxa/types
+    npm install @v1ctorio/jxa-types
 
 ## Usage
 
 This library is just TypeScript definition files.
 In other words, this library only used for importing.
 
-If you want to modify `global`, see [@jxa/global-type](../global-type).
+If you want to modify `global`, see [@v1ctorio/jxa-global-type](../global-type).
 
 ### Use with custom Application type
 
@@ -22,7 +22,7 @@ If you want to modify `global`, see [@jxa/global-type](../global-type).
 Example: `GoogleChrome` Application
 
 ```ts
-import { Application } from "@jxa/types";
+import { Application } from "@v1ctorio/jxa-types";
 import { GoogleChrome } from "./fixtures/GoogleChrome";
 // Pass Custom Application type as generics
 const chrome = Application<GoogleChrome>("Google Chrome");

@@ -1,4 +1,4 @@
-import "@jxa/global-type";
+import "@v1ctorio/jxa-global-type";
 import { run, runJXACode } from "../src/run";
 import * as assert from "assert";
 

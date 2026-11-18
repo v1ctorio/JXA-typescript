@@ -1,5 +1,5 @@
 {
-  "name": "@jxa/global-type",
+  "name": "@v1ctorio/jxa-global-type",
   "version": "1.4.1",
   "description": "JXA typing for global",
   "keywords": [
@@ -9,9 +9,9 @@
     "types",
     "typescript"
   ],
-  "homepage": "https://github.com/JXA-userland/JXA/tree/master/packages/@jxa/global-type/",
+  "homepage": "https://github.com/v1ctorio/JXA-typescript/tree/master/packages/@jxa/global-type/",
   "bugs": {
-    "url": "https://github.com/JXA-userland/JXA/issues"
+    "url": "https://github.com/v1ctorio/JXA-typescript/issues"
   },
   "license": "MIT",
   "author": "azu",
@@ -28,17 +28,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JXA-userland/JXA.git"
+    "url": "https://github.com/v1ctorio/JXA-typescript.git",
+    "directory": "packages/@jxa/global-type"
   },
   "scripts": {
     "test": "tsc -p test/",
     "clean": "rimraf lib/"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "dependencies": {
-    "@jxa/types": "^1.4.1"
+    "@v1ctorio/jxa-types": "^1.4.1"
   },
   "devDependencies": {
     "@types/node": "^18.7.8",
